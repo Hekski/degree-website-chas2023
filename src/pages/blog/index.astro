@@ -1,61 +1,95 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
+import BaseLayout from "../../layouts/BaseLayout.astro";
+const title = "Thesis";
+const description = "My graduation thesis from Chas Academy";
+const permalink = `${Astro.site.href}blog/`;
+const { current = "" } = Astro.props;
 
-const title = 'Blog';
-const description = 'Latest articles.';
-const permalink = `${Astro.site.href}blog`;
-
-let allPosts = await Astro.glob('../../data/blog-posts/*.md');
-allPosts = await Promise.all(allPosts.map(async post => {
-  const content = await post.Content({},{}, []);
-  return {
-    ...post,
-    content,
-  };
-}));
-
-// allPosts = allPosts.sort((a, b) => new Date(b.frontmatter.publishDate).valueOf() - new Date(a.frontmatter.publishDate).valueOf());
-
+let allPosts = await Astro.glob("../../data/blog-posts/*.md");
+allPosts = await Promise.all(
+  allPosts.map(async (post) => {
+    const content = await post.Content({}, {}, []);
+    return {
+      ...post,
+      content,
+    };
+  })
+);
+allPosts = allPosts.sort(
+  (a, b) => new Date(b.frontmatter.publishDate).valueOf() - new Date(a.frontmatter.publishDate).valueOf()
+);
 ---
 
 <BaseLayout title={title} description={description} permalink={permalink} current="blog">
   <div class="container">
     <h1>Thesis</h1>
-  
+
     <div class="post-container">
-      <section>
-        {allPosts.map((post, index) => {
-          const href = `/blog/${post.file.split('/').pop().split('.').shift()}`;
-          return (
-            <div class="post-item">
-              <h2>
-                <a href={href}>{post.frontmatter.title}</a>
-                </h2>
-                <div class="post-item-footer">
-                  <span class="post-item-date">— {post.frontmatter.publishDate}</span>
-                  </div>
-                  </div>
-                  )
-                })}
+      <section class="post-item">
+        {
+          allPosts.map((post, index) => {
+            return (
+              <div>
+                <h4>
+                  <button class={current === "Abstract" ? "selected" : ""} id={`button-${index}`}>
+                    {post.frontmatter.title}
+                  </button>
+                </h4>
+              </div>
+            );
+          })
+        }
       </section>
       <section class="post-data">
-        {allPosts.map((post, index) => {
-          console.log("postData", post);
-          return (
-            <article>
-              <Fragment set:html={post.content.props.children}/>
-            </article>
-          )
-        })}
+        {
+          allPosts.map((post, index) => {
+            return (
+              <article id={`post-${index}`}>
+                <post.default />
+              </article>
+            );
+          })
+        }
       </section>
     </div>
   </div>
 </BaseLayout>
 
 <style>
+  button:hover::before,
+  .selected::before {
+    transform: scaleX(1);
+  }
+
+  .selected::before {
+    background: var(--primary-color);
+  }
+
+  button:not(.selected) {
+    opacity: 0.7;
+  }
+
+  button::before {
+    content: "";
+    position: absolute;
+    transition: transform 0.3s ease;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--text-secondary);
+    transform: scaleX(0);
+  }
+
   .post-container {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+  }
+
+  .post-item {
+    margin: 0 0 1.6em 0;
+    width: 30%;
+    display: flex;
   }
 
   .post-data {
@@ -79,3 +113,39 @@ allPosts = await Promise.all(allPosts.map(async post => {
     margin: 60px auto;
   }
 </style>
+
+<script>
+  function displayPost(index: number) {
+    // Hide all posts
+    let posts = document.querySelectorAll("article");
+    posts.forEach((post) => {
+      post.style.display = "none";
+    });
+
+    // Reset button styles
+    let buttons = document.querySelectorAll("button");
+    buttons.forEach((button) => {
+      button.style.fontWeight = "normal";
+    });
+
+    // Make active button font bold
+    let selectedButton = document.querySelector(`#button-${index}`);
+    (selectedButton as HTMLElement).style.fontWeight = "bold";
+
+    // Show only the selected post
+    let selectedPost = document.querySelector(`#post-${index}`);
+    (selectedPost as HTMLElement).style.display = "block";
+  }
+
+  // Attach event listeners to the buttons and set initial button style
+  window.onload = function () {
+    let posts = document.querySelectorAll("article");
+    let buttons = document.querySelectorAll("button");
+
+    posts.forEach((post, index) => {
+      post.style.display = index === 0 ? "block" : "none";
+      buttons[index].style.fontWeight = index === 0 ? "bold" : "normal"; // Set initial button style
+      document.querySelector(`#button-${index}`).addEventListener("click", () => displayPost(index));
+    });
+  };
+</script>
