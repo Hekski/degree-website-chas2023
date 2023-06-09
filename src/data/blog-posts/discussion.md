@@ -10,7 +10,7 @@ description: A disscusion around the result of the thesis
 
 <p>
 <br />
-Återanvändning och kodmönster utgör inte alltid den optimala lösningen; i vissa fall krävs en djupgående förståelse av applikationens affärslogik för att kunna skapa meningsfull återanvändbarhet. Det innebär att man behöver förstå de regler och rutiner som styr hur ett företag eller en organisation opererar. Trots detta, kan utvecklingen av återanvändbara komponenter som kan tillämpas på olika delar av applikationen minska upprepning av kod. Detta gör koden lättare att underhålla och minskar risken för fel.
+Återanvändning och kodmönster utgör inte alltid den mest optimala lösningen; i vissa fall krävs en djupgående förståelse av applikationens affärslogik för att kunna skapa meningsfull återanvändbarhet. Det innebär att man behöver förstå de regler och rutiner som styr hur ett företag eller en organisation opererar. Trots detta, kan utvecklingen av återanvändbara komponenter som kan tillämpas på olika delar av applikationen minska upprepning av kod. Detta gör koden lättare att underhålla och minskar risken för fel.
 </p>
 <br />
 
