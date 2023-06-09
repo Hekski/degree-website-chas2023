@@ -6,15 +6,16 @@ description: The result of the thesis
 
 ## Resultat
 
+<br />
+
 <div class="container">
-    <figure class="abstract-image">
-      <img src="/assets/dashboard.jpg" alt="Dashboard" width="330">
-      <figcaption>
-        Overview of the dashboard
-      </figcaption>
-    </figure>
-    <p class="start">Jag har använt en kombination av kodmönstren "Composing Components" och "Compound Components" för min dashboard.</p>
-    <br />
+   <figure class="abstract-image">
+   <img src="/assets/dashboard.jpg" alt="Dashboard" width="330">
+   <figcaption>
+      Overview of the dashboard
+   </figcaption>
+   </figure>
+   <p class="start">Jag har använt en kombination av kodmönstren "Composing Components" och "Compound Components" för min dashboard.</p>
 <p>
 Denna kombination kan vara den mest lämpliga för att bygga en flexibel och återanvändbar dashboard. "Composing Components" mönstret används när man bygger upp en komplex komponent genom att kombinera mindre delkomponenter.
 Å andra sidan används "Compound Components" mönstret för att dela gemensam funktionalitet och data mellan flera komponenter.
@@ -22,8 +23,8 @@ Denna kombination kan vara den mest lämpliga för att bygga en flexibel och åt
 <p>
 Detta skapar en bra läsbarhet utan propsande då jag endast propsar mitt mappade objekt “widget”. Komponenten lätt återanvändas i olika situationer, antingen använda den som den är med de inbyggda komponenterna, eller du kan passa in egna komponenter via props för att ändra dess beteende.
 </p>
-    <br />
-    <br />
+
+<br />
 
 #### Huvudkomponent
 

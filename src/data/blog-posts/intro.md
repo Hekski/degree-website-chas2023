@@ -20,27 +20,25 @@ description: My graduation thesis from Chas Academy
 
 Projektet kommer av att jag under min praktik såg möjligheten att utveckla en så kallad “Dashboard” som en del av en startsida för en inloggad användare. Idéen med denna funktion är att ge den inloggade användaren en informativ överblicksbild av appens tjänster och administrativa möjligheter.
 <br />
-<br />
 
 Utmaningen för mig som utvecklare är att bygga denna funktion:
 
 -  Läsbar
 -  Skalbar
 -  Och med återanvändbart modulärt tänk
-   <br />
-   <br />
 
 För att skapa förutsättningar för framtida ändringar, utbyggnad och underhåll.
 
 <br />
-<br />
-<br />
 
 ![Super wide](/assets/figma1.jpg)
 
+<figcaption>
+   Bild 1. Skisser och kommunicerande.
+</figcaption>
+
 [[Top]](#top)
-<br />
-<br />
+
 <br />
 
 ## <a name="Bakgrund"></a>Bakgrund
@@ -55,9 +53,6 @@ Fördelarna är många och uppenbara:
 -  Mindre kodbas och mer konsekvent kod och produktion.
 -  Lättare att testa och förstå mindre kundsegment.
 -  Flexibel återanvändning av komponenter med mera.
-
-<br />
-<br />
 
 Jag har genom utbildningen lite burit med mig att React är något att försöka bli bekväm med, men även att det är det biblioteket “som gäller”. Även om det under senare tid har dykt upp nya liknande bibliotek i stor utsträckning. För att citera en barndomskamrat som jobbar i branchen.
 
@@ -106,5 +101,10 @@ En önskan från företaget var om användaren skulle kunna lägga till och ta b
 <br />
 ![Super wide](/assets/layout.png)
 
+<figcaption>
+   Bild 2. Skisser av anpassad layout.
+</figcaption>
+
 <br />
+
 [[Top]](#top)

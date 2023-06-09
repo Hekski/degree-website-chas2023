@@ -27,8 +27,6 @@ Arbetet har gjorts efter en grov planering. Det är alltid svårt att veta hur l
 ## <a name="Planering"></a>Planering
 
 Arbetet har utförts under 4 stycken sprintar där arbetet är uppdelat enligt nedan.
-<br />
-<br />
 
 ### Sprint 1
 
@@ -61,7 +59,7 @@ Arbetet har utförts under 4 stycken sprintar där arbetet är uppdelat enligt n
 <figure class="abstract-image">
       <img src="/assets/figma2.png" alt="Sketch" width="330">
       <figcaption>
-        Bild 1. En färdig idéskiss
+        Bild 3. En färdig idéskiss
       </figcaption>
     </figure>
 
@@ -70,14 +68,14 @@ Tillgången till marknads- eller användarundersökning var begränsad och har j
 <br />
 Jag diskuterar fram några uppslag till Widgets med företagets ena grundare. Dessa är dock mer riktlinjer då fokus har främst lagts på att bygga en modulär och återanvändbar mall och alla Widgets fungerande har fått lite sekundär prio.
 
-| Widget             | Requester | Reseller | Carrier | Info                      |
-| :----------------- | :-------- | :------: | ------: | :------------------------ |
-| Status Numbers     | Yes       |   Yes    |     Yes | Overall status figures    |
-| Monthly Rapport    | Yes       |   Yes    |     Yes | Graph of customer benefit |
-| Project            | Yes       |          |         | Project page              |
-| Best Seller        |           |   Yes    |         | Seller top list           |
-| Current Deliveries |           |          |     Yes | Shows current deliveries  |
-| More?              |           |          |         | TBD                       |
+| Widget             | Inköp | ÅF  | Bud | Info                      |
+| :----------------- | :---- | :-: | --: | :------------------------ |
+| Status Numbers     | Yes   | Yes | Yes | Overall status figures    |
+| Monthly Rapport    | Yes   | Yes | Yes | Graph of customer benefit |
+| Project            | Yes   |     |     | Project page              |
+| Best Seller        |       | Yes |     | Seller top list           |
+| Current Deliveries |       |     | Yes | Shows current deliveries  |
+| More?              |       |     |     | TBD                       |
 
 <figcaption>
     Tabell 1. Möjliga uppslag för Widgets
@@ -87,17 +85,17 @@ Jag diskuterar fram några uppslag till Widgets med företagets ena grundare. De
 <figure class="abstract-image">
       <img src="/assets/delar.png" alt="Sketch" width="330">
       <figcaption>
-        Bild 2. Komponentuppbyggnad av Widget
+        Bild 4. Komponentuppbyggnad av Widget
       </figcaption>
     </figure>
 
 Jag tänker att en enkel väg att gå är att varje widget som mest ska bestå av 5 komponenter:
 
--  `<WidgetItem />` Ett "kort" för alla widgets.
--  `<WidgetTitle />` En beskrivande titel
--  `<WidgetButton />` En eventuell knapp som kan se olika ut
--  `<WidgetDropdown />` En eventuell dropdown om knappen är av typen
--  `<WidgetContent />` En sektion för att ladda en valfri Widget
+-  **`<WidgetItem />`** Ett "kort" för alla widgets.
+-  **`<WidgetTitle />`** En beskrivande titel
+-  **`<WidgetButton />`** En eventuell knapp som kan se olika ut
+-  **`<WidgetDropdown />`** En eventuell dropdown om knappen är av typen
+-  **`<WidgetContent />`** En sektion för att ladda en valfri Widget
 
 <br />
 <br />
@@ -116,18 +114,14 @@ Denna metadata returneras till huvudkomponenten där de mappas sedan ut till oli
 <figure class="abstract-image">
       <img src="/assets/dataflow.svg" alt="Sketch" width="650">
       <figcaption>
-        Bild 3. Flödesschema för datan, kan ses som ett grovt ER-diagram
+        Bild 5. Flödesschema för datan, kan ses som ett grovt ER-diagram
       </figcaption>
     </figure>
 
 Senare skapas en ny Array (selectedWidget) med de widgets som användaren lägger till och tar bort med de widgets som finns i useWidgetInfo som grund.
 
 De widget layout användaren vill ha på sin dashboard sparas i databasen samt widgets med CRUD-behov, tex Projekt-widgeten.
-<br />
-<br />
-<br />
-<br />
-<br />
+
 <br />
 
 ## <a name="Filstruktur"></a>Filstruktur för komponenter
@@ -146,9 +140,7 @@ De widget layout användaren vill ha på sin dashboard sparas i databasen samt w
 -  **Widgets** är till största del unikt innehåll med specifik metadata och funktionalitet per användarroll kan fortfarande skickas in till dessa, vilket gör att man kan återanvända även dessa med olika data beroende på specifika fall. Tex en widget som ser liknande ut för flera användarroller men som använder annan data. Detta har jag dock inte nått hela vägen med.
 
 [[Top]](#top)
-<br />
-<br />
-<br />
+
 <br />
 
 ## useWidgetInfo (custom hook)

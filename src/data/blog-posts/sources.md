@@ -7,8 +7,6 @@ description: Various sources
 ## Källförteckning
 
 <div class="container">
-    
-<br />
 
 **React patterns**
 <br />
@@ -24,13 +22,9 @@ Vincas Stonys(YouTube). 2023. “Composable & Compound Components”
 Un-Suck Your React Components - Composable & Compound Components
 (Hämtad 2023-04-25)
 
-<br />
-
 Felix Gerschau. 2022. “React Component Composition Explained”
 https://felixgerschau.com/react-component-composition/
 (Hämtad 2023-04-25)
-
-<br />
 
 Kencdodds.com. 2019. “React Hooks: Compound components''
 https://kentcdodds.com/blog/compound-components-with-react-hooks
