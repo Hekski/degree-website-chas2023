@@ -1,4 +1,5 @@
 ---
+import Bio from "../components/Bio.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 
 const title = "About";
@@ -8,31 +9,26 @@ const permalink = `${Astro.site.href}abstract`;
 
 <BaseLayout title={title} description={description} permalink={permalink} current="abstract">
   <div class="container">
-    <h1>Abstract</h1>
+    <h1>About</h1>
+    <Bio />
+    <br />
+    <br />
+    <br />
     <figure class="abstract-image">
       <img src="/assets/dashboard.jpg" alt="Dashboard" width="330" />
       <figcaption>Overview of the dashboard</figcaption>
     </figure>
     <p>
-      This degree project in the subject of web development is about developing a "developer and admin-friendly",
-      modular "Dashboard" with a focus on reusability, readability and scalability for effective future maintenance and
-      further development.
-    </p>
-    <p>
-      I have not wanted to get in over my head with the size of this project, but to further explore and practice
-      improving my structure and modularization skills and experience. A personal matter of the heart that for me feels
-      almost as important and interesting as writing efficient functions and is the foundation of all projects. The work
-      with this dashboard is connected to the company "Bidstacker" where I did my internship during the training and is
-      an extension of their web app.
-    </p>
-    <p>
-      I aim to use modern web development techniques and principles within the realm of the React library, to create
-      flexible and reusable components. As part of writing clean and modular code the concept of S.O.L.I.D. is also
-      studied. The tools used are the React framework Next.js, Tailwind CSS, Node.js and MongoDB.
-    </p>
-    <p>
-      Finding a natural way to structure and modularize in React.js or in project structures in general with reusable
-      functionality is high on my list of personal interest and development and I hope this project makes that clear.
+      This is my thesis from Chas Academy 2023 in the subject of web development. <strong
+        >Its currently only in Swedish.</strong
+      >
+      <br />
+      <br />
+      It's about developing one "developer and admin friendly", modular "Dashboard" focusing on reusability, readability
+      and scalability for effective future maintenance and further development.
+      <br />
+      <br />
+      Happy reading!
     </p>
   </div>
 </BaseLayout>
